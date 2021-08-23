@@ -1,0 +1,39 @@
+<alert type="secondary">Child Component </alert>
+<alert type="success" >@Input Demostration</alert>
+<h2 [style.background] = "'violet'">
+    {{"Message passed by Parent to Child : "+parentData}}
+</h2>
+
+Number Array passed by Parent :
+<div [class] = "myClass1" *ngFor="let value of parentArrData"> 
+    {{value}}
+</div>
+
+String array passed by Parent :
+<table  class="table table-striped"> 
+    <tbody>
+        <tr *ngFor="let value of parentArrStrData; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+                <td>
+                    {{value}}                  
+                </td>
+        </tr>
+    </tbody>
+</table>
+
+<h1 [class]="myClass1" >{{" Flag passed by Parent : " +parentDataFlag}}</h1>
+
+
+<alert type= "success" >@Output Demostration</alert>
+<!-- @Output Demostartion--> 
+<label for="typeahead-focus">Enter Name :</label>
+<input type="text" 
+       #inputId
+       type="text"
+       class="form-control"
+       [style.width]="'20%'"><br>
+<button type="button"
+        class="btn btn-outline-secondary mr-2" 
+        (click)= "sendData(inputId.value)"
+        >Submit
+</button>
